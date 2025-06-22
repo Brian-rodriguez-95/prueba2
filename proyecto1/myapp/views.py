@@ -4,6 +4,15 @@ from django.http import HttpResponse
 def saludar (request):
     return HttpResponse("hola desde django") #clase httpResponse
 
+def saludar_con_parametros(request, nombre: str , apellido: str):
+    nombre = nombre.capitalize()
+    apellido = apellido.upper()
+    return HttpResponse (f"{apellido}, {nombre}")
+
+def index(request):
+    return render(request, "myapp/index.html")
+
+
 
 # Create your views here.
 #def index(request):
